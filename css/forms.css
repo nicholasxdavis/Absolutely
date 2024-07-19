@@ -1,0 +1,88 @@
+        /* Additional styles specific to homepage */
+        body.dark-mode .hero h1 {
+            color: white;
+        }
+        body.dark-mode .hero p {
+            color: white;
+        }
+        .hero {
+            color: var(--color-text-dark);
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: black;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: black;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .contact-form {
+            background: var(--color-bg-card-light);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin: 2rem 0;
+            width: 700px;
+            transition: background-color 0.3s, color 0.3s;
+            box-sizing: border-box;
+        }
+
+        .dark-mode .contact-form {
+            background: var(--color-bg-card-dark);
+            color: var(--color-text-card-dark);
+        }
+
+        .contact-form h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            min-width: 100%; /* Allow the width to shrink if needed */
+            max-width: 100%; /* Prevent expanding beyond the container */
+            box-sizing: border-box;
+            border: 1px solid var(--color-border-light);
+            border-radius: 4px;
+            padding: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .dark-mode .contact-form input, .dark-mode .contact-form textarea {
+            background: var(--color-bg-pre-dark);
+            color: var(--color-text-dark);
+            border-color: var(--color-border-dark);
+        }
+
+        .contact-form button {
+            background-color: var(--color-bg-button);
+            color: var(--color-text-dark);
+            border: none;
+            border-radius: 4px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dark-mode .contact-form button {
+            background-color: var(--color-bg-button-dark);
+        }
+
+        .contact-form button:hover, .dark-mode .contact-form button:hover {
+            background-color: var(--color-bg-button-hover);
+        }
+        @media only screen and (max-width: 768px) {
+    .card, .contact-form {
+        width: 80%;
+    }
+}

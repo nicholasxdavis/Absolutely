@@ -1,0 +1,155 @@
+body.dark-mode .header {
+    background-color: #1e1e1e;
+}
+body.dark-mode .footer {
+    background-color: #1e1e1e;
+}
+.header, .footer {
+    width: 100%;
+    background-color: #f8f8f8; /* Light background */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.header img {
+    width: 40px; /* Smaller logo size for a sleeker look */
+    height: auto;
+}
+
+
+.header .nav-links, .footer .nav-links, .header .nav-links2, .footer .nav-links2 {
+    display: flex;
+    padding-left: 20px; /* Added left padding */
+}
+
+body.dark-mode .footer .nav-links a, .footer .nav-links2 a {
+        text-decoration: none;
+        color: #FFF; /* Dark text color */
+        font-weight: 500; /* Slightly bolder text */
+    }
+    body.dark-mode .header .nav-links a, .header .nav-links2 a  {
+        text-decoration: none;
+        justify-content: space-between;
+        padding-left: 10px;
+        color: #FFF; /* Dark text color */
+        font-weight: 500; /* Slightly bolder text */
+    }
+    .header .nav-links a, .header .nav-links2 a  {
+        justify-content: space-between;
+        padding-left: 10px;
+    }
+    @media only screen and (max-width: 768px) {
+        .header .nav-links a, , .header .nav-links2 a, {
+            display: none;
+     }
+    }
+    .header .nav-links a, .footer .nav-links a, .header .nav-links2 a, .footer .nav-links2 a {
+        text-decoration: none;
+        color: #333; /* Dark text color */
+        font-weight: 500; /* Slightly bolder text */
+    }
+    body.dark-mode .footer .nav-links a:hover, .footer .nav-links2 a:hover {
+        color: #2a9d8f;
+    }
+    body.dark-mode .header .nav-links a:hover, .header .nav-links2 a:hover {
+        color: #2a9d8f;
+    }
+    .header .nav-links a:hover, .footer .nav-links a:hover, .header .nav-links2 a:hover, .footer .nav-links2 a:hover {
+        color: #2a9d8f; /* Apple blue hover effect */
+    }
+    body.dark-mode .nav-links2 a {
+        color: #FFF; /* Dark icon color */
+    }
+    body.dark-mode .toggle {
+        color: #2a9d8f; /* Dark icon color */
+    }
+        .menu-icon {
+    display: none;
+    max-width: 20px;
+    max-height: 20px;
+    cursor: pointer;
+    padding-right: 40px; /* Added right padding */
+}
+.toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #333; /* Dark icon color */
+    padding-right: 20px; /* Added right padding */
+}
+.toggle i {
+    margin-left: 10px;
+}
+
+.footer .nav-links {
+    display: flex;
+    justify-content: center; /* Center links horizontally */
+    gap: 20px;
+    padding-left: 20px; /* Added left padding */
+}
+.footer {
+
+    justify-content: center; /* Center content vertically */
+    flex-direction: column;
+    text-align: center;
+    bottom: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.footer p {
+    text-align: center;
+    font-size: 14px;
+    color: #777; /* Lighter text color for footer */
+}
+.footer a {
+    text-align: center;
+    text-decoration: none;
+    color: #007aff; /* Apple blue color */
+}
+.footer a:hover {
+    text-align: center;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+    .header .nav-links a, .header .nav-links2 a, .footer .nav-links2 a {
+        display: none;
+    }
+}
+
+.print h2, .print p {
+    justify-content: center;
+    text-align: center;
+}
+.print h2 {
+    font-size: 30px;
+}
+.print p {
+    font-size: 15px;
+}
+.hero h3 {
+    color: black;
+}
+
+button {
+    background-color: var(--color-bg-button);
+    color: var(--color-text-dark);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: -15px;
+}
+
+.dark-mode button {
+    background-color: var(--color-bg-button-dark);
+}
+
+button:hover, .dark-mode button:hover {
+    background-color: var(--color-bg-button-hover);
+}

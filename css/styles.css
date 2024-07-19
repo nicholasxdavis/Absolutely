@@ -1,0 +1,395 @@
+/* Root colors */
+:root {
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #121212;
+    --color-text-light: #000000;
+    --color-text-dark: #ffffff;
+    --color-bg-header: #2a9d8f;
+    --color-bg-card-light: #f9f9f9;
+    --color-bg-card-dark: #1e1e1e;
+    --color-text-card-dark: #ffffff;
+    --color-border-light: #ddd;
+    --color-border-dark: #444;
+    --color-bg-pre-light: #f5f5f5;
+    --color-bg-pre-dark: #2a2a2a;
+    --color-text-pre-light: #333;
+    --color-text-pre-dark: #e0e0e0;
+    --color-bg-button: #2a9d8f;
+    --color-bg-button-hover: #1C8078;
+    --color-bg-button-dark: #2a9d8f;
+    --color-error-bg-light: #f5f5f5;
+    --color-error-bg-dark: #2a2a2a;
+    --color-error-remove: #ff0000;
+    --color-error-remove-dark: #ff4444;
+}
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+
+body {
+    overflow-x: hidden;
+    font-family: 'Muli', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.light-mode {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+}
+
+.dark-mode {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+}
+
+main {
+    padding: 2rem;
+    flex: 1;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.load-wrapp {
+  display: none;
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 0 10px 10px 0;
+  padding: 20px 20px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+.ball-holder {
+  position: absolute;
+  width: 12px;
+  height: 45px;
+  left: 17px;
+  top: 0px;
+}
+body.dark-mode .ball {
+    background: #2a9d8f;
+    opacity: 0.7;
+}
+body.dark-mode .square {
+    background: #2a9d8f;
+    opacity: 0.7;
+}
+
+.ball {
+  position: absolute;
+  top: -11px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background: black;
+  opacity: 0.7;
+}
+
+.square {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background-color: black;
+  opacity: 0.7;
+}
+.load-7 .square {
+  animation: loadingG 1.5s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+}
+
+@keyframes loadingA {
+  0 {
+    height: 15px;
+  }
+  50% {
+    height: 35px;
+  }
+  100% {
+    height: 15px;
+  }
+}
+
+@keyframes loadingB {
+  0 {
+    width: 15px;
+  }
+  50% {
+    width: 35px;
+  }
+  100% {
+    width: 15px;
+  }
+}
+
+@keyframes loadingC {
+  0 {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes loadingD {
+  0 {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingE {
+  0 {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingF {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loadingG {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(70px, 0) rotate(360deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes loadingH {
+  0% {
+    width: 15px;
+  }
+  50% {
+    width: 35px;
+    padding: 4px;
+  }
+  100% {
+    width: 15px;
+  }
+}
+
+@keyframes loadingI {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loadingJ {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(80px, 0);
+    background-color: #f5634a;
+    width: 25px;
+  }
+}
+    .popup {
+    justify-content: center;
+    text-align: center;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+.load-wrapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.popup-content {
+
+    justify-content: center;
+    text-align: center;
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; /* Could be more or less, depending on screen size */
+    height: 200px;
+    border-radius: 15px; /* Rounded corners */
+    display: flex; /* Added to use flexbox */
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+body.dark-mode .popup {
+    justify-content: center;
+    text-align: center;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Darker background for dark mode */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+body.dark-mode .popup-content {
+    justify-content: center;
+    text-align: center;
+    background-color: #333; /* Darker background for content */
+    color: #f1f1f1; /* Light text color for dark mode */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; /* Could be more or less, depending on screen size */
+    height: 200px;
+    border-radius: 15px; /* Rounded corners */
+    display: flex; /* Added to use flexbox */
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+.close-button {
+    background-color: var(--color-bg-button);
+    color: var(--color-text-dark);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px; /* Add some space above the button */
+}
+
+.dark-mode .close-button {
+    background-color: var(--color-bg-button-dark);
+}
+
+.close-button:hover, .dark-mode .close-button:hover {
+    background-color: var(--color-bg-button-hover);
+}
+h1 {
+    font-size: 2rem; /* Adjust the font size */
+    font-weight: bold; /* Make the font bold */
+    color: #333; /* Set the text color */
+    text-align: center; /* Center the text */
+    margin-bottom: -1px; /* Add some space above the h1 */
+    max-width: 400px;
+
+}
+body.dark-mode h1 {
+    color: #FFF;
+}
+
+/* Styles for p */
+p {
+    font-size: 1rem; /* Adjust the font size */
+    line-height: 1.5; /* Set the line height for better readability */
+    color: #666; /* Set the text color */
+    text-align: center; /* Center the text */
+    margin: 1px 0; /* Add some space above and below the p elements */
+        max-width: 400px;
+}
+p a {
+    color: #2a9d8f; /* Change to your desired link color */
+    text-decoration: underline; /* Optional: underline the link */
+}
+
+p a:hover {
+    color: #1C8078; /* Change to your desired hover color */
+    text-decoration: none; /* Optional: remove underline on hover */
+}
+.nav-links a.active, body.dark-mode .nav-links a.active {
+    color: #2a9d8f; /* Active link text color */
+}
+.dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        min-width: 200px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: #333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+        color: #2a9d8f;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Dark mode styles for dropdown */
+    body.dark-mode .dropdown-content {
+        background-color: #444;
+    }
+
+    body.dark-mode .dropdown-content a {
+        color: #f1f1f1;
+    }
+
+    body.dark-mode .dropdown-content a:hover {
+        background-color: #555;
+        color: #2a9d8f;
+    }

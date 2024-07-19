@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Yucca - Contact Us</title>
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<style>
+    .popup {
+    justify-content: center;
+    text-align: center;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+.load-wrapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.popup-content {
+
+    justify-content: center;
+    text-align: center;
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; /* Could be more or less, depending on screen size */
+    height: 200px;
+    border-radius: 15px; /* Rounded corners */
+    display: flex; /* Added to use flexbox */
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+body.dark-mode .popup {
+    justify-content: center;
+    text-align: center;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Darker background for dark mode */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+body.dark-mode .popup-content {
+    justify-content: center;
+    text-align: center;
+    background-color: #333; /* Darker background for content */
+    color: #f1f1f1; /* Light text color for dark mode */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; /* Could be more or less, depending on screen size */
+    height: 200px;
+    border-radius: 15px; /* Rounded corners */
+    display: flex; /* Added to use flexbox */
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+.close-button {
+    background-color: var(--color-bg-button);
+    color: var(--color-text-dark);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px; /* Add some space above the button */
+}
+
+.dark-mode .close-button {
+    background-color: var(--color-bg-button-dark);
+}
+
+.close-button:hover, .dark-mode .close-button:hover {
+    background-color: var(--color-bg-button-hover);
+}
+h1 {
+    font-size: 2rem; /* Adjust the font size */
+    font-weight: bold; /* Make the font bold */
+    color: #333; /* Set the text color */
+    text-align: center; /* Center the text */
+    margin-bottom: -1px; /* Add some space above the h1 */
+    max-width: 400px;
+
+}
+body.dark-mode h1 {
+    color: #FFF;
+}
+
+/* Styles for p */
+p {
+    font-size: 1rem; /* Adjust the font size */
+    line-height: 1.5; /* Set the line height for better readability */
+    color: #666; /* Set the text color */
+    text-align: center; /* Center the text */
+    margin: 1px 0; /* Add some space above and below the p elements */
+        max-width: 400px;
+}
+p a {
+    color: #2a9d8f; /* Change to your desired link color */
+    text-decoration: underline; /* Optional: underline the link */
+}
+
+p a:hover {
+    color: #1C8078; /* Change to your desired hover color */
+    text-decoration: none; /* Optional: remove underline on hover */
+}
+.nav-links a.active, body.dark-mode .nav-links a.active {
+    color: #2a9d8f; /* Active link text color */
+}
+.dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        min-width: 200px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: #333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+        color: #2a9d8f;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Dark mode styles for dropdown */
+    body.dark-mode .dropdown-content {
+        background-color: #444;
+    }
+
+    body.dark-mode .dropdown-content a {
+        color: #f1f1f1;
+    }
+
+    body.dark-mode .dropdown-content a:hover {
+        background-color: #555;
+        color: #2a9d8f;
+    }
+    /* Media query for mobile devices */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+}
+body.dark-mode .menu-icon {
+    content: url('img/darkmenu.svg');
+    filter: invert(0);
+}
+img {
+    max-width: 100%; /* Ensures the image scales with the container */
+    height: auto; /* Maintains the aspect ratio of the image */
+}
+body.dark-mode .thank-you-image {
+    content: url('img/darkthanks.png');
+}
+</style>
+<body class="light-mode">
+    <div class="header">
+        <div class="nav-links">
+    </div>
+
+    <div class="nav-links2">
+    <div class="toggle" onclick="toggleMode()">
+        <i class="fas fa-moon"></i>
+        </div>
+    </div>
+</div>
+</body>
+    <main>
+        <H1>Order Confirmed!</H1><br>ㅤ<br>
+         <img src="img/thanks.png" alt="Thank You Image" class="thank-you-image">
+        <p>We’re thrilled to have you on board as one of the first to pre-order our upcoming book. Your support is invaluable and plays a crucial role in bringing this project to life. We can’t wait for you to experience the journey we’ve crafted within these pages. Stay tuned for updates and the official release date!<br>ㅤ<br> If you have any questions or need assistance, please don’t hesitate to reach out.</p><br>ㅤ<br>
+        <h1>Contact Us</h1>
+            <p>Please fill out the form below and we'll get back to you shortly.</p>
+<div class="contact-form">
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+                    <p>Our office hours are 7am to 7pm Pacific Time, Mon-Sun.</p>
+            <p>You can also reach us directly at <a href="mailto:contact@blacnova.store">contact@blacnova.store</a>.</p>
+    </main>
+</div>
+    <div class="footer">
+        <div class="nav-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+       <p> &copy; 2024 Yucca by <a href="https://www.blacnova.store" target="_blank" style="color: #2a9d8f; text-decoration: underline;">Blacnova</a>. <br>All rights are reserved.</p>
+    </div>
+    <div id="popup" class="popup">
+    <div class="popup-content">
+        <div class="load-wrapp" id="popup-loader">
+            <div class="load-7">
+                <div class="square-holder">
+                    <div class="square"></div>
+                </div>
+            </div>
+        </div>
+        <div id="message-sent" style="display:none;">Message Sent</div>
+        <button class="close-button" id="close-popup">Close</button>
+    </div>
+</div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const popup = document.getElementById('popup');
+    const popupLoader = document.getElementById('popup-loader');
+    const messageSent = document.getElementById('message-sent');
+
+    const lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
+    const currentTime = new Date().getTime();
+    const thirtyMinutes = 30 * 60 * 1000; // 30 minutes in milliseconds
+
+    // Check if the user has submitted a message in the last 30 minutes
+    if (lastSubmissionTime && (currentTime - lastSubmissionTime) < thirtyMinutes) {
+        // Show the popup
+        popup.style.display = 'flex';
+        // Hide the loader
+        popupLoader.style.display = 'none';
+        // Show the "Please try again in 30 minutes or so" text
+        messageSent.innerHTML = 'Please wait 30 minutes before submitting another request.';
+        messageSent.style.display = 'block';
+        return; // Prevent form submission
+    }
+
+    // Update the last submission time
+    localStorage.setItem('lastSubmissionTime', currentTime);
+
+    // Show the popup
+    popup.style.display = 'flex';
+
+    // Show the loader initially
+    popupLoader.style.display = 'flex';
+    messageSent.style.display = 'none';
+
+    // Simulate a delay for the loader
+    setTimeout(function() {
+        // Hide the loader
+        popupLoader.style.display = 'none';
+        // Show the "Message Sent" text
+        messageSent.innerHTML = 'Your message has been sent successfully!';
+        messageSent.style.display = 'block';
+    }, 2000); // Adjust the delay as needed
+});
+
+document.getElementById("close-popup").addEventListener("click", function() {
+    document.getElementById("popup").style.display = "none";
+});
+
+
+
+    </script>
+    <script> 
+document.getElementById("close-popup").addEventListener("click", function() {
+    document.getElementById("popup").style.display = "none";
+});
+    </script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

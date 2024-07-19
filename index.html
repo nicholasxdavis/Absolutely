@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolutely Jaded Presale</title>
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/css.css">
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .details {
+            max-width: 400px;
+        }
+
+        .details h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .details p {
+            font-size: 1.1em;
+            margin: 20px 0;
+        }
+
+        .details .price {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+        .details .stripe-button {
+            margin-top: 20px;
+        }
+
+        .book-form {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            height: 100px;
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #2a9d8f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #21867a;
+        }
+
+        .payment-info {
+            margin: 20px 0;
+        }
+.book-covers {
+    display: flex;
+    gap: 10px;
+}
+
+.book-cover {
+    max-width: 140px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .book-covers {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+        max-width: 100%;
+        margin
+    }
+
+    .book-cover {
+        max-width: 180px;
+        width: 100%;
+        margin: 0 5px;
+    }
+
+    .details {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .details h1 {
+        font-size: 1.5em;
+    }
+
+    .details p {
+        font-size: 1em;
+        margin: 15px 0;
+    }
+
+    .details .price {
+        font-size: 1.2em;
+        margin: 10px 0;
+    }
+
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .details .stripe-button {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        width: 100%;
+        font-size: 1em;
+    }
+
+    .form-group button {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+    }
+}
+
+
+    </style>
+</head>
+<body class="light-mode">
+    <div class="header">
+        <div class="nav-links">
+        </div>
+        <div class="nav-links2">
+            <div class="toggle" onclick="toggleMode()">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </div>
+
+    <main>
+       <div class="container">
+    <div class="book-covers">
+        <img src="img/book.png" alt="Absolutely Jaded Book Front Cover" class="book-cover front-cover">
+        <img src="img/back.png" alt="Absolutely Jaded Book Back Cover" class="book-cover back-cover">
+    </div>
+            <div class="details">
+                <h1>Absolutely Jaded Presale <br>by <i>Erica Nicole Hall.</i></h1>
+                <p>Experience the emotional journey through Erica Nicole Hall's "Absolutely Jaded." This exquisite collection of poems captures the raw essence of healing and resilience, weaving together the intricate threads of heartache, recovery, and personal growth. <br>Each poem delves deep into the human experience, offering a poignant reflection on life's challenges and triumphs. Hall's eloquent words resonate with readers, touching the heart and soul, and leaving a lasting impression of strength and hope.<br> "Absolutely Jaded" is not just a book of poetry; it's a testament to the enduring power of the human spirit.</p>
+                <div class="price"><h1>$20.00</h1></div>
+                <div class ="btn">
+                <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+                <stripe-buy-button
+                    buy-button-id="buy_btn_1Pe6JvGCxC23yph28kLwxNCn"
+                    publishable-key="pk_test_51PTdu7GCxC23yph24UKFHkUefifAapBkHduSq9YZKyF3vpJXioS5kSn6PytFdCwnQA19OIBWkX54VdU1j1nnA8KB00SkGvt0QR"
+                >
+                </stripe-buy-button>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer">
+        <div class="nav-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <p> &copy; 2024 Yucca by <a href="https://www.blacnova.store" target="_blank" style="color: #2a9d8f; text-decoration: underline;">Blacnova</a>. <br>All rights are reserved.</p>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div class="load-wrapp" id="popup-loader">
+                <div class="load-7">
+                    <div class="square-holder">
+                        <div class="square"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="message-sent" style="display:none;">Message Sent</div>
+            <button class="close-button" id="close-popup">Close</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('presaleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const popup = document.getElementById('popup');
+            const popupLoader = document.getElementById('popup-loader');
+            const messageSent = document.getElementById('message-sent');
+
+            const lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
+            const currentTime = new Date().getTime();
+            const thirtyMinutes = 30 * 60 * 1000; // 30 minutes in milliseconds
+
+            // Check if the user has submitted a message in the last 30 minutes
+            if (lastSubmissionTime && (currentTime - lastSubmissionTime) < thirtyMinutes) {
+                // Show the popup
+                popup.style.display = 'flex';
+                // Hide the loader
+                popupLoader.style.display = 'none';
+                // Show the "Please try again in 30 minutes or so" text
+                messageSent.innerHTML = 'Please wait 30 minutes before submitting another request.';
+                messageSent.style.display = 'block';
+                return; // Prevent form submission
+            }
+
+            // Update the last submission time
+            localStorage.setItem('lastSubmissionTime', currentTime);
+
+            // Show the popup
+            popup.style.display = 'flex';
+
+            // Show the loader initially
+            popupLoader.style.display = 'flex';
+            messageSent.style.display = 'none';
+
+            // Simulate a delay for the loader
+            setTimeout(function() {
+                // Hide the loader
+                popupLoader.style.display = 'none';
+                // Show the "Message Sent" text
+                messageSent.innerHTML = 'Your presale order has been received!';
+                messageSent.style.display = 'block';
+            }, 2000); // Adjust the delay as needed
+        });
+
+        document.getElementById("close-popup").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "none";
+        });
+    </script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
